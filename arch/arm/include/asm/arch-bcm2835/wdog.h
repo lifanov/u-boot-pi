@@ -1,5 +1,5 @@
 /*
- * (C) Copyright 2012 Stephen Warren
+ * (C) Copyright 2012,2015 Stephen Warren
  *
  * See file CREDITS for list of people who contributed to this
  * project.
@@ -17,7 +17,11 @@
 #ifndef _BCM2835_TIMER_H
 #define _BCM2835_TIMER_H
 
+#ifdef CONFIG_BCM2836
+#define BCM2835_WDOG_PHYSADDR			0x3f100000
+#else
 #define BCM2835_WDOG_PHYSADDR			0x20100000
+#endif
 
 struct bcm2835_wdog_regs {
 	u32 unknown0[7];

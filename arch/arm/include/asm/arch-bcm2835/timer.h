@@ -1,5 +1,5 @@
 /*
- * (C) Copyright 2012 Stephen Warren
+ * (C) Copyright 2012,2015 Stephen Warren
  *
  * See file CREDITS for list of people who contributed to this
  * project.
@@ -17,7 +17,11 @@
 #ifndef _BCM2835_TIMER_H
 #define _BCM2835_TIMER_H
 
+#ifdef CONFIG_BCM2836
+#define BCM2835_TIMER_PHYSADDR	0x3f003000
+#else
 #define BCM2835_TIMER_PHYSADDR	0x20003000
+#endif
 
 struct bcm2835_timer_regs {
 	u32 cs;
